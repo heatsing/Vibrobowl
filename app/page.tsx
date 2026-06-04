@@ -5,6 +5,7 @@ import { ArrowRight, CirclePlay, Globe2, Headphones, ShieldCheck, Star, Trophy }
 import { FadeUp } from "@/components/animated";
 import { ProductGrid } from "@/components/cards";
 import { JsonLd } from "@/components/json-ld";
+import { RFQModal } from "@/components/rfq-modal";
 import { advantages, company, stats, trustLogos } from "@/lib/site-data";
 import { siteUrl } from "@/lib/utils";
 import { itemListSchema, pageMetadata } from "@/lib/seo";
@@ -47,7 +48,8 @@ export default function HomePage() {
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-slate-200">Engineered for consistent part handling and maximum uptime across the world's most demanding automated production lines.</p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="/products" className="focus-ring inline-flex items-center gap-2 rounded-md bg-electric px-6 py-4 text-sm font-black uppercase text-white hover:bg-blue-700">
+              <RFQModal />
+              <Link href="/products" className="focus-ring inline-flex items-center gap-2 rounded-md border border-white/40 px-6 py-4 text-sm font-black uppercase text-white hover:bg-white/10">
                 Explore Solutions <ArrowRight className="h-4 w-4" />
               </Link>
               <Link href="/resources" className="focus-ring inline-flex items-center gap-3 rounded-md border border-white/40 px-6 py-4 text-sm font-black uppercase text-white hover:bg-white/10">

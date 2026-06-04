@@ -5,6 +5,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ConversionBand } from "@/components/simple-page";
 import { AuthorityProof, TrustBar } from "@/components/authority";
+import { ConversionDock } from "@/components/conversion-dock";
 import { company } from "@/lib/site-data";
 import { JsonLd } from "@/components/json-ld";
 import { siteUrl } from "@/lib/utils";
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} pb-20 font-sans antialiased lg:pb-24`}>
         <JsonLd
           data={{
             "@context": "https://schema.org",
@@ -88,6 +89,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <AuthorityProof />
         <ConversionBand />
         <Footer />
+        <ConversionDock />
       </body>
     </html>
   );

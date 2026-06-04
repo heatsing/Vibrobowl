@@ -47,6 +47,23 @@ export function RFQModal({ compact = false }: { compact?: boolean }) {
     modalScrollRef.current?.scrollTo({ top: 0, behavior: "auto" });
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") setOpen(false);
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [open]);
+
   return (
     <>
       <button
@@ -59,7 +76,15 @@ export function RFQModal({ compact = false }: { compact?: boolean }) {
         Request a Quote
       </button>
       {open ? (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-navy-950/75 p-4 backdrop-blur-md sm:p-8" role="dialog" aria-modal="true" aria-labelledby="rfq-title">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-navy-950/75 p-4 backdrop-blur-md sm:p-8"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="rfq-title"
+          onMouseDown={(event) => {
+            if (event.currentTarget === event.target) setOpen(false);
+          }}
+        >
           <div className="relative w-full max-w-5xl overflow-hidden rounded-lg bg-white shadow-2xl">
             <button
               onClick={() => setOpen(false)}
