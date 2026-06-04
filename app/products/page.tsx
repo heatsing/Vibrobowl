@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Filter, Search } from "lucide-react";
-import { ProductGrid } from "@/components/cards";
 import { products } from "@/lib/site-data";
 import { JsonLd } from "@/components/json-ld";
 import { siteUrl } from "@/lib/utils";
 import { CapabilityMatrix, MetricsBand, ProcessFlow, VisualBand } from "@/components/simple-page";
 import { breadcrumbSchema, itemListSchema, pageMetadata } from "@/lib/seo";
 import { PageSpecificBrief } from "@/components/page-specific";
+import { ProductExplorer } from "@/components/product-explorer";
 
 export const metadata: Metadata = pageMetadata({
   title: "Products",
@@ -33,14 +32,6 @@ export default function ProductsPage() {
           <p className="eyebrow">Product Center</p>
           <h1 className="mt-3 max-w-3xl text-5xl font-black tracking-tight text-navy-900">Automated Feeding Systems for Precision Manufacturing</h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-700">Filter feeder types, compare machine architectures, and download datasheets for engineering review.</p>
-          <div className="mt-8 grid gap-3 rounded-lg border border-slate-200 bg-white p-3 shadow-sm md:grid-cols-[1fr_auto_auto]">
-            <label className="flex items-center gap-3 rounded-md bg-slate-50 px-4 py-3">
-              <Search className="h-5 w-5 text-electric" />
-              <input className="w-full bg-transparent outline-none" placeholder="Search products, applications, materials..." />
-            </label>
-            <button className="inline-flex items-center justify-center gap-2 rounded-md border border-slate-200 px-5 py-3 font-black text-navy-900"><Filter className="h-4 w-4" /> Filter</button>
-            <button className="rounded-md bg-navy-900 px-5 py-3 font-black text-white">Compare Products</button>
-          </div>
         </div>
       </section>
       <PageSpecificBrief
@@ -58,15 +49,7 @@ export default function ProductsPage() {
         ]}
         nextStep="Shortlist the feeder type that seems closest, then submit drawings or part photos so engineering can confirm the architecture."
       />
-      <section className="py-14">
-        <div className="container-wide">
-          <ProductGrid />
-          <div className="mt-10 rounded-lg bg-navy-900 p-8 text-white">
-            <h2 className="text-2xl font-black">Quote Builder Ready</h2>
-            <p className="mt-2 text-slate-300">Shortlist feeders, add part drawings, and submit one consolidated RFQ to our engineering team.</p>
-          </div>
-        </div>
-      </section>
+      <ProductExplorer />
       <section className="bg-white py-16">
         <div className="container-wide">
           <div className="text-center">
