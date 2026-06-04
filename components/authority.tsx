@@ -37,8 +37,6 @@ export function AuthorityProof() {
     }
   ];
 
-  const standards = ["ISO 9001", "CE", "RoHS", "SGS", "FAT Report", "CAD Review", "PLC Interface", "Spare Parts"];
-
   return (
     <section className="bg-slate-50 py-16">
       <div className="container-wide">
@@ -67,16 +65,6 @@ export function AuthorityProof() {
                 <h3 className="mt-4 text-lg font-black text-navy-900">{card.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-slate-700">{card.text}</p>
               </div>
-            ))}
-          </div>
-        </div>
-        <div className="mt-10 rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
-          <p className="text-sm font-black uppercase tracking-[0.18em] text-slate-500">Procurement and Engineering Evidence</p>
-          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {standards.map((standard) => (
-              <span key={standard} className="rounded-md bg-slate-50 px-4 py-3 text-center text-sm font-black text-navy-900">
-                {standard}
-              </span>
             ))}
           </div>
         </div>
