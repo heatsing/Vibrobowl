@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Linkedin, Mail, MapPin, Phone, Youtube } from "lucide-react";
+import { Clock, Globe2, Linkedin, Mail, MapPin, Youtube } from "lucide-react";
 import { company, industries, products } from "@/lib/site-data";
 import { Logo } from "@/components/logo";
 
@@ -32,8 +32,9 @@ export function Footer() {
         <div>
           <h3 className="text-sm font-black uppercase tracking-wide">Contact Us</h3>
           <div className="mt-4 grid gap-3 text-sm text-slate-300">
-            <span className="flex gap-2"><Phone className="h-4 w-4" /> {company.phone}</span>
+            <span className="flex gap-2"><Clock className="h-4 w-4" /> {company.responseTime}</span>
             <span className="flex gap-2"><Mail className="h-4 w-4" /> {company.email}</span>
+            <span className="flex gap-2"><Globe2 className="h-4 w-4" /> {company.serviceRegion}</span>
             <span className="flex gap-2"><MapPin className="h-4 w-4" /> {company.address}</span>
           </div>
         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, Phone, ShieldCheck } from "lucide-react";
+import { FileText, Mail, ShieldCheck } from "lucide-react";
 import { RFQModal } from "@/components/rfq-modal";
 import { company } from "@/lib/site-data";
 
@@ -20,8 +20,8 @@ export function ConversionDock() {
             </div>
           </div>
           <div className="flex shrink-0 items-center gap-2">
-            <Link href={`tel:${company.phone.replace(/\s+/g, "")}`} className="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-md border border-white/20 text-white hover:bg-white/10" aria-label="Call VibraFlow">
-              <Phone className="h-5 w-5" />
+            <Link href="/downloads" className="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-md border border-white/20 text-white hover:bg-white/10" aria-label="Open technical downloads">
+              <FileText className="h-5 w-5" />
             </Link>
             <Link href={`mailto:${company.email}`} className="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-md border border-white/20 text-white hover:bg-white/10" aria-label="Email VibraFlow">
               <Mail className="h-5 w-5" />
@@ -33,8 +33,8 @@ export function ConversionDock() {
       <div className="fixed inset-x-0 bottom-0 z-30 border-t border-white/15 bg-navy-950/95 p-3 text-white shadow-2xl backdrop-blur-md lg:hidden">
         <div className="grid grid-cols-[1fr_auto_auto] items-center gap-2">
           <RFQModal compact />
-          <Link href={`tel:${company.phone.replace(/\s+/g, "")}`} className="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-md border border-white/20" aria-label="Call VibraFlow">
-            <Phone className="h-5 w-5" />
+          <Link href="/downloads" className="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-md border border-white/20" aria-label="Open technical downloads">
+            <FileText className="h-5 w-5" />
           </Link>
           <Link href={`mailto:${company.email}`} className="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-md border border-white/20" aria-label="Email VibraFlow">
             <Mail className="h-5 w-5" />

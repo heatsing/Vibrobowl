@@ -57,12 +57,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             url: siteUrl,
             logo: `${siteUrl}/images/product-machine.png`,
             email: company.email,
-            telephone: company.phone,
-            address: { "@type": "PostalAddress", streetAddress: company.address },
+            address: { "@type": "PostalAddress", addressCountry: "Global export support" },
             contactPoint: [
               {
                 "@type": "ContactPoint",
-                telephone: company.phone,
                 email: company.email,
                 contactType: "sales and engineering support",
                 areaServed: ["US", "CA", "DE", "GB", "AU", "JP", "KR"],

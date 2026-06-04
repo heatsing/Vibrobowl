@@ -13,7 +13,7 @@ export function RFQModal({ compact = false }: { compact?: boolean }) {
     ["Name", "name", "text", "Your name"],
     ["Company", "company", "text", "Company name"],
     ["Email", "email", "email", "name@company.com"],
-    ["WhatsApp / Phone", "phone", "tel", "+1 123 456 7890"]
+    ["WhatsApp / Phone", "phone", "tel", "Work phone or WhatsApp"]
   ];
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {

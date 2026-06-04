@@ -22,10 +22,10 @@ export const company = {
   name: "VibraFlow",
   legalName: "VibraFlow Precision Automation Co., Ltd.",
   tagline: "Driven by Precision",
-  phone: "+1 123 456 7890",
-  email: "info@vibraflow.com",
-  address: "123 Innovation Way, Detroit, MI 48201, USA",
-  whatsapp: "+1 123 456 7890"
+  email: "sales@vibrobowl.com",
+  responseTime: "Typical engineering response within 24 hours",
+  serviceRegion: "USA, Canada, Germany, UK, Australia, Japan, South Korea",
+  address: "Global engineering support for North America, Europe, Australia, Japan, and South Korea"
 };
 
 export const products = [
