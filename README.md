@@ -65,3 +65,25 @@ The site includes:
 - Product and industry static generation
 
 Update `NEXT_PUBLIC_SITE_URL` before deploying to production.
+
+## Cloudflare Deployment
+
+This project includes an RFQ API route, so it is deployed with OpenNext for Cloudflare rather than as a static-only Pages export.
+
+Build and preview for Cloudflare:
+
+```bash
+npm run preview
+```
+
+Deploy:
+
+```bash
+npm run deploy
+```
+
+Current Cloudflare deployment:
+
+```text
+https://vibroflow-industrial-site.heatsinghaiqing.workers.dev
+```
