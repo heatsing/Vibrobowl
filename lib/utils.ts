@@ -5,4 +5,4 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.vibroflow.com";
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://vibrobowl.com";

@@ -64,7 +64,7 @@ The site includes:
 - Manifest
 - Product and industry static generation
 
-Update `NEXT_PUBLIC_SITE_URL` before deploying to production.
+Update `NEXT_PUBLIC_SITE_URL` before deploying to production. The default production domain is `https://vibrobowl.com`.
 
 ## Cloudflare Deployment
 
@@ -85,5 +85,5 @@ npm run deploy
 Current Cloudflare deployment:
 
 ```text
-https://vibroflow-industrial-site.heatsinghaiqing.workers.dev
+https://vibrobowl.com
 ```
