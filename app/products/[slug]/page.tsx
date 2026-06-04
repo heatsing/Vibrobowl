@@ -9,6 +9,7 @@ import { JsonLd } from "@/components/json-ld";
 import { advantages, cases, certifications, faqs, products } from "@/lib/site-data";
 import { siteUrl } from "@/lib/utils";
 import { breadcrumbSchema, pageMetadata, productSchema } from "@/lib/seo";
+import { PageSpecificBrief } from "@/components/page-specific";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -79,6 +80,22 @@ export default async function ProductDetailPage({ params }: Props) {
           {advantages.map((item) => <div key={item.title} className="rounded-lg p-4 transition hover:bg-slate-50"><item.icon className="h-9 w-9 text-electric" /><p className="mt-3 font-black uppercase text-navy-900">{item.title}</p><p className="mt-1 text-sm text-slate-600">{item.text}</p></div>)}
         </div>
       </section>
+
+      <PageSpecificBrief
+        eyebrow="Product Fit"
+        title={`${product.name} page focused on application fit and quote readiness`}
+        intro={`This detail page explains when ${product.name.toLowerCase()} make sense, what engineering inputs are needed, and how the system should be validated before production.`}
+        audience="Automation engineers, OEM machine builders, system integrators, and procurement teams evaluating this specific feeder type for a production line."
+        painPoints={[
+          { title: "Part behavior uncertainty", text: "The same feeder category can perform differently depending on part geometry, material, burrs, coating, and orientation target." },
+          { title: "Integration assumptions", text: "Discharge position, sensors, controller interface, hopper supply, and changeover needs must be defined early." }
+        ]}
+        proof={[
+          { title: "Annotated machine overview", text: "The page calls out bowl track, controller, base drive, tooling, sensors, and output areas." },
+          { title: "Specification table", text: "Model, voltage, capacity, material, weight, and applications are presented for engineering review." }
+        ]}
+        nextStep={`Use this page to confirm whether ${product.name.toLowerCase()} fit your part family, then submit drawings and target feed rate for final engineering review.`}
+      />
 
       <section className="py-16">
         <div className="container-wide rounded-lg border border-slate-200 bg-white p-6 shadow-industrial">

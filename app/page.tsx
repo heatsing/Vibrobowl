@@ -8,6 +8,7 @@ import { JsonLd } from "@/components/json-ld";
 import { advantages, company, stats, trustLogos } from "@/lib/site-data";
 import { siteUrl } from "@/lib/utils";
 import { itemListSchema, pageMetadata } from "@/lib/seo";
+import { PageSpecificBrief } from "@/components/page-specific";
 
 export const metadata: Metadata = pageMetadata({
   title: "Vibratory Bowl Feeders & Automated Feeding Systems",
@@ -82,6 +83,22 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <PageSpecificBrief
+        eyebrow="Homepage Purpose"
+        title="The homepage directs each buyer to the right proof path"
+        intro="The homepage is designed as a routing layer for industrial buyers: products for engineers, industries for application fit, resources for research, and RFQ for active projects."
+        audience="First-time visitors, automation engineers, factory owners, procurement teams, OEMs, and system integrators evaluating whether VibraFlow is worth a technical conversation."
+        painPoints={[
+          { title: "Too many feeder choices", text: "Buyers may know the part problem but not whether a bowl, linear, centrifugal, flexible, or hopper-based system is right." },
+          { title: "Trust before inquiry", text: "Industrial buyers need proof of engineering capability before they share drawings or request a quote." }
+        ]}
+        proof={[
+          { title: "Trust logos and metrics", text: "The page presents global installations, country coverage, ISO quality, support, and customer proof early." },
+          { title: "Clear route map", text: "Products, industries, case studies, downloads, and RFQ all appear as distinct decision paths." }
+        ]}
+        nextStep="Start with Products if you know the feeder type, Industries if you know the application, or Request a Quote if you already have part details."
+      />
 
       <section className="py-16">
         <div className="container-wide">

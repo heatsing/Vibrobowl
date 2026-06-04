@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/json-ld";
 import { siteUrl } from "@/lib/utils";
 import { CapabilityMatrix, MetricsBand, ProcessFlow, VisualBand } from "@/components/simple-page";
 import { breadcrumbSchema, itemListSchema, pageMetadata } from "@/lib/seo";
+import { PageSpecificBrief } from "@/components/page-specific";
 
 export const metadata: Metadata = pageMetadata({
   title: "Products",
@@ -42,6 +43,21 @@ export default function ProductsPage() {
           </div>
         </div>
       </section>
+      <PageSpecificBrief
+        eyebrow="Product Selection"
+        title="A product page built for feeder architecture decisions"
+        intro="This page helps engineers compare feeder formats before they send parts for review. The goal is to move from a broad equipment category to a realistic machine architecture."
+        audience="Automation engineers, machine builders, OEM project managers, and procurement teams comparing bowl, linear, centrifugal, flexible, step, and hopper-based feeding systems."
+        painPoints={[
+          { title: "Wrong feeder type", text: "A fast catalog choice can fail when part geometry, nesting, or discharge timing is not reviewed." },
+          { title: "Incomplete quote scope", text: "Feeders need tooling, controls, hoppers, sensors, and documentation considered together." }
+        ]}
+        proof={[
+          { title: "Category-level comparison", text: "Each product card shows where that feeder format fits and what engineering data matters." },
+          { title: "RFQ-ready path", text: "The page points buyers toward drawings, part details, feed rate, and integration requirements." }
+        ]}
+        nextStep="Shortlist the feeder type that seems closest, then submit drawings or part photos so engineering can confirm the architecture."
+      />
       <section className="py-14">
         <div className="container-wide">
           <ProductGrid />

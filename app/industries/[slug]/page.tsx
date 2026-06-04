@@ -6,6 +6,7 @@ import { CapabilityMatrix, MetricsBand, ProcessFlow, SimpleHero, VisualBand } fr
 import { industries } from "@/lib/site-data";
 import { JsonLd } from "@/components/json-ld";
 import { breadcrumbSchema, industrySchema, pageMetadata } from "@/lib/seo";
+import { PageSpecificBrief } from "@/components/page-specific";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -34,6 +35,21 @@ export default async function IndustryDetailPage({ params }: Props) {
       <JsonLd data={industrySchema(industry)} />
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Industries", path: "/industries" }, { name: industry.name, path: `/industries/${industry.slug}` }])} />
       <SimpleHero eyebrow="Industry Solution" title={`${industry.name} Automated Feeding Systems`} text={industry.detail} />
+      <PageSpecificBrief
+        eyebrow="Industry-Specific Fit"
+        title={`${industry.name} feeding systems designed around real production constraints`}
+        intro={`This page frames feeding automation for ${industry.name.toLowerCase()} projects, where part type, compliance pressure, uptime expectations, and integration details shape the feeder recommendation.`}
+        audience={`${industry.name} manufacturers, OEM machine builders, plant engineering teams, and integrators planning automated part feeding or inspection workflows.`}
+        painPoints={[
+          { title: "Production constraint mismatch", text: "A feeder that works in one industry can fail when cleanliness, throughput, documentation, or part fragility changes." },
+          { title: "Downstream integration risk", text: "Robots, assembly machines, packaging lines, and inspection stations each require different handoff behavior." }
+        ]}
+        proof={[
+          { title: "Application requirements", text: "The page highlights orientation, machine integration, quality documentation, and support expectations." },
+          { title: "Recommended product path", text: "Related feeder products are shown before the RFQ path so teams can compare likely architectures." }
+        ]}
+        nextStep={`Review the ${industry.name.toLowerCase()} requirements, compare recommended products, and send part details for a feeder concept matched to your line.`}
+      />
       <section className="py-14">
         <div className="container-wide grid gap-8 lg:grid-cols-[.7fr_1.3fr]">
           <div className="rounded-lg bg-navy-900 p-8 text-white"><Icon className="h-16 w-16 text-blue-300" /><h2 className="mt-5 text-3xl font-black">Application Requirements</h2></div>
