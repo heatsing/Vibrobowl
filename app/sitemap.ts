@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { downloadResources } from "@/lib/downloads";
 import { industries, products } from "@/lib/site-data";
 import { siteUrl } from "@/lib/utils";
 
@@ -24,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticPages.map(([path, priority, changeFrequency]) => ({ url: `${siteUrl}${path}`, lastModified: new Date(), changeFrequency, priority })),
     ...products.map((p) => ({ url: `${siteUrl}/products/${p.slug}`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.9 })),
-    ...industries.map((i) => ({ url: `${siteUrl}/industries/${i.slug}`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 }))
+    ...industries.map((i) => ({ url: `${siteUrl}/industries/${i.slug}`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 })),
+    ...downloadResources.map((resource) => ({ url: `${siteUrl}/downloads/${resource.slug}`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.55 }))
   ];
 }
