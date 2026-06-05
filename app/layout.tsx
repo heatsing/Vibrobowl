@@ -77,8 +77,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               "Vision inspection systems",
               "Industrial automation"
             ],
-            areaServed: ["USA", "Canada", "Germany", "United Kingdom", "Australia", "Japan", "South Korea"],
-            sameAs: ["https://www.linkedin.com", "https://www.youtube.com"]
+            areaServed: ["USA", "Canada", "Germany", "United Kingdom", "Australia", "Japan", "South Korea"]
           }}
         />
         <Header />

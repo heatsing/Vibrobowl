@@ -17,7 +17,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/certifications", 0.7, "monthly"],
     ["/blog", 0.65, "weekly"],
     ["/faq", 0.65, "monthly"],
-    ["/contact", 0.65, "monthly"]
+    ["/contact", 0.65, "monthly"],
+    ["/privacy", 0.3, "yearly"],
+    ["/terms", 0.3, "yearly"]
   ] as const;
   return [
     ...staticPages.map(([path, priority, changeFrequency]) => ({ url: `${siteUrl}${path}`, lastModified: new Date(), changeFrequency, priority })),

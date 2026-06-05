@@ -18,7 +18,12 @@ export function Footer() {
           <div className="[&_span]:text-white"><Logo /></div>
           <p className="mt-5 max-w-xs text-sm leading-6 text-slate-300">Smart feeding solutions that move your productivity forward.</p>
           <div className="mt-5 flex gap-3 text-slate-300">
-            <Linkedin className="h-5 w-5" /><Youtube className="h-5 w-5" />
+            <Link href="/about" className="focus-ring rounded-md p-1 hover:text-white" aria-label="About VibraFlow">
+              <Linkedin className="h-5 w-5" />
+            </Link>
+            <Link href="/resources" className="focus-ring rounded-md p-1 hover:text-white" aria-label="VibraFlow resources">
+              <Youtube className="h-5 w-5" />
+            </Link>
           </div>
         </div>
         {footerGroups.map((group) => (
@@ -42,7 +47,11 @@ export function Footer() {
       <div className="border-t border-white/10 py-5">
         <div className="container-wide flex flex-col justify-between gap-3 text-sm text-slate-300 md:flex-row">
           <span>Copyright 2026 VibraFlow. All rights reserved.</span>
-          <span>Privacy Policy &nbsp; | &nbsp; Terms of Use</span>
+          <span>
+            <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
+            &nbsp; | &nbsp;
+            <Link href="/terms" className="hover:text-white">Terms of Use</Link>
+          </span>
         </div>
       </div>
     </footer>

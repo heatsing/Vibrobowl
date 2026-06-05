@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, CheckCircle, Download, FileText, PlayCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, Download, FileText } from "lucide-react";
 import { IndustryGrid, ProductGrid } from "@/components/cards";
 import { RFQModal } from "@/components/rfq-modal";
 import { JsonLd } from "@/components/json-ld";
@@ -56,7 +56,7 @@ export default async function ProductDetailPage({ params }: Props) {
       <section className="bg-slate-50 bg-industrial-grid bg-[length:34px_34px] py-16">
         <div className="container-wide grid items-center gap-10 lg:grid-cols-[.8fr_1.2fr]">
           <div>
-            <nav className="text-sm font-semibold text-slate-600">Home &nbsp;›&nbsp; Products &nbsp;›&nbsp; {product.name}</nav>
+            <nav className="text-sm font-semibold text-slate-600">Home / Products / {product.name}</nav>
             <h1 className="mt-7 text-balance text-5xl font-black uppercase tracking-tight text-navy-900 md:text-6xl">{product.name}</h1>
             <p className="mt-5 text-2xl font-bold text-navy-800">High Precision Feeding Solutions for Automated Production Lines</p>
             <p className="mt-5 max-w-xl text-lg leading-8 text-slate-700">Designed for accurate orientation and feeding of small parts with maximum efficiency and reliability.</p>
@@ -68,7 +68,7 @@ export default async function ProductDetailPage({ params }: Props) {
             <div className="mt-8 flex flex-wrap gap-4">
               <RFQModal />
               <Link href="/downloads" className="inline-flex items-center gap-2 rounded-md border border-navy-800 px-5 py-3 text-sm font-black uppercase text-navy-900"><Download className="h-4 w-4" /> Download Catalog</Link>
-              <Link href="/resources" className="inline-flex items-center gap-2 rounded-md border border-slate-300 px-5 py-3 text-sm font-black uppercase text-navy-900"><PlayCircle className="h-4 w-4" /> Watch Video</Link>
+              <Link href="/resources?q=video" className="inline-flex items-center gap-2 rounded-md border border-slate-300 px-5 py-3 text-sm font-black uppercase text-navy-900"><FileText className="h-4 w-4" /> View Demo Resources</Link>
             </div>
           </div>
           <Image src={product.image} alt={product.name} width={960} height={700} priority className="object-contain drop-shadow-[0_30px_70px_rgba(8,36,73,.2)]" />
@@ -105,7 +105,7 @@ export default async function ProductDetailPage({ params }: Props) {
               <h2 className="section-title mt-2">Engineered orientation, stable flow, clean integration</h2>
               <p className="mt-5 leading-7 text-slate-700">{product.name} are engineered for versatility and reliability. They support broad part sizes, shapes, and materials while keeping production lines running at peak efficiency.</p>
               <ul className="mt-6 grid gap-2 text-sm font-semibold text-slate-700">
-                {["Automotive", "Electronics", "Pharmaceutical", "Medical devices", "General manufacturing"].map((item) => <li key={item}>• {item}</li>)}
+                {["Automotive", "Electronics", "Pharmaceutical", "Medical devices", "General manufacturing"].map((item) => <li key={item}>- {item}</li>)}
               </ul>
             </div>
             <div className="relative">
@@ -159,7 +159,7 @@ export default async function ProductDetailPage({ params }: Props) {
         <div className="container-wide">
           <h2 className="section-title text-center">Customer Success Stories</h2>
           <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {cases.map((item) => <article key={item.title} className="industrial-card rounded-lg p-6"><p className="eyebrow">{item.industry} • {item.country}</p><h3 className="mt-3 text-xl font-black text-navy-900">{item.title}</h3><p className="mt-4 leading-7 text-slate-700">{item.result}</p><Link href="/case-studies" className="mt-5 inline-flex items-center gap-2 font-black text-electric">Read Case Study <ArrowRight className="h-4 w-4" /></Link></article>)}
+            {cases.map((item) => <article key={item.title} className="industrial-card rounded-lg p-6"><p className="eyebrow">{item.industry} - {item.country}</p><h3 className="mt-3 text-xl font-black text-navy-900">{item.title}</h3><p className="mt-4 leading-7 text-slate-700">{item.result}</p><Link href="/case-studies" className="mt-5 inline-flex items-center gap-2 font-black text-electric">Read Case Study <ArrowRight className="h-4 w-4" /></Link></article>)}
           </div>
         </div>
       </section>

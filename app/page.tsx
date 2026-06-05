@@ -52,8 +52,8 @@ export default function HomePage() {
               <Link href="/products" className="focus-ring inline-flex items-center gap-2 rounded-md border border-white/40 px-6 py-4 text-sm font-black uppercase text-white hover:bg-white/10">
                 Explore Solutions <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link href="/resources" className="focus-ring inline-flex items-center gap-3 rounded-md border border-white/40 px-6 py-4 text-sm font-black uppercase text-white hover:bg-white/10">
-                Watch Video <CirclePlay className="h-5 w-5" />
+              <Link href="/resources?q=video" className="focus-ring inline-flex items-center gap-3 rounded-md border border-white/40 px-6 py-4 text-sm font-black uppercase text-white hover:bg-white/10">
+                View Demo Resources <CirclePlay className="h-5 w-5" />
               </Link>
             </div>
             <div className="mt-10 grid gap-5 sm:grid-cols-3">
