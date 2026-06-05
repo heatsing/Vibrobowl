@@ -22,7 +22,15 @@ const productTypes = [
   "Vision Inspection System"
 ];
 
-export function InlineRFQForm() {
+export function InlineRFQForm({
+  initialProductType = "Vibratory Bowl Feeder",
+  initialRequirement = "",
+  source = "Inline RFQ form"
+}: {
+  initialProductType?: string;
+  initialRequirement?: string;
+  source?: string;
+}) {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
 
@@ -83,7 +91,7 @@ export function InlineRFQForm() {
           ))}
           <label className="text-sm font-black text-navy-900">
             Product Type
-            <select name="productType" className="mt-2 w-full rounded-md border border-slate-300 bg-white px-3 py-3 outline-none transition focus:border-electric focus:ring-4 focus:ring-blue-100">
+            <select name="productType" defaultValue={initialProductType} className="mt-2 w-full rounded-md border border-slate-300 bg-white px-3 py-3 outline-none transition focus:border-electric focus:ring-4 focus:ring-blue-100">
               {productTypes.map((type) => <option key={type}>{type}</option>)}
             </select>
           </label>
@@ -96,6 +104,7 @@ export function InlineRFQForm() {
             <textarea
               name="requirement"
               required
+              defaultValue={initialRequirement}
               className="mt-2 min-h-32 w-full rounded-md border border-slate-300 px-3 py-3 outline-none transition focus:border-electric focus:ring-4 focus:ring-blue-100"
               placeholder="Part size, material, required orientation, feed rate, machine interface, voltage, delivery target..."
             />
@@ -104,7 +113,7 @@ export function InlineRFQForm() {
             <Upload className="h-5 w-5 text-electric" /> Upload Drawing / Photo
             <input name="attachment" type="file" className="sr-only" />
           </label>
-          <input type="hidden" name="source" value="Inline RFQ form" />
+          <input type="hidden" name="source" value={source} />
           <button disabled={status === "submitting"} type="submit" className="inline-flex items-center justify-center gap-2 rounded-md bg-electric px-5 py-4 text-sm font-black uppercase text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-70">
             {status === "submitting" ? "Submitting..." : "Submit RFQ"} <Send className="h-4 w-4" />
           </button>

@@ -21,6 +21,7 @@ export function ProductExplorer() {
     return matchesCategory && (!normalizedQuery || searchText.includes(normalizedQuery));
   });
   const comparedProducts = products.filter((product) => compare.includes(product.slug));
+  const shortlistHref = `/rfq?products=${encodeURIComponent(compare.join(","))}`;
 
   function toggleCompare(slug: string) {
     setCompare((current) => {
@@ -73,7 +74,7 @@ export function ProductExplorer() {
                 <p className="text-sm font-black uppercase tracking-wide text-blue-200">Product Comparison</p>
                 <h2 className="mt-1 text-2xl font-black">Compare shortlist before RFQ</h2>
               </div>
-              <Link href="/rfq" className="inline-flex items-center justify-center rounded-md bg-electric px-5 py-3 text-sm font-black uppercase text-white hover:bg-blue-700">
+              <Link href={shortlistHref} className="inline-flex items-center justify-center rounded-md bg-electric px-5 py-3 text-sm font-black uppercase text-white hover:bg-blue-700">
                 Submit shortlist RFQ
               </Link>
             </div>

@@ -38,7 +38,7 @@ export function DownloadCenter() {
               <p className="mt-2 leading-7 text-slate-700">
                 Public downloads provide engineering briefs. Official certificates, FAT media, wiring notes, and supplier approval files can be attached to your RFQ after project qualification.
               </p>
-              <Link href="/rfq" className="mt-4 inline-flex items-center gap-2 font-black uppercase text-electric">
+              <Link href="/rfq?document=project-specific-files" className="mt-4 inline-flex items-center gap-2 font-black uppercase text-electric">
                 Submit project details <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
